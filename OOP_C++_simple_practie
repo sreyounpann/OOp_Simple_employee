@@ -1,0 +1,63 @@
+//
+//  main.cpp
+//  HW1_M1_EX1
+//
+//  Created by Yeow Pann on 11/8/22.
+//
+#include <iostream>
+using namespace std;
+class Employee {
+public:
+    int id;
+    string name;
+    string birth_date;
+    float salary;
+    string address;
+
+    Employee():id(0),name("unknown"), birth_date("unknown"), salary(0), address("unknown") {}
+    Employee(int id, string name, string birth_date, float salary, string address):
+        id(id), name(name), birth_date(birth_date), salary(salary), address(address){}
+
+    ~Employee() {
+        cout << "objects destroyed" << endl;
+    }
+
+    void input() {
+        cout << "Input your ID      : "; 
+        cin >> id;
+        cout << "Input name         : "; 
+        cin >> name;
+        cout << "Input Birth's date : "; 
+        cin >> birth_date;
+        cout << "Input salary       : "; 
+        cin >> salary;
+        cout << "Input address      : "; 
+        cin >> address;
+    }
+    void output() {
+        cout << "============= Display Information =============\n";
+        cout << "ID           : " << id << endl;
+        cout << "Name         : " << name << endl;
+        cout << "Birth's Date : " << birth_date << endl;
+        cout << "Salary       : " << salary << endl;
+        cout << "Address      : " << address << endl;
+
+    }
+    
+};
+
+int main()
+{
+    Employee employee1;
+    employee1.output();
+
+    Employee employee2(101, "Dara", "1/1/2001", 500, "PP");
+    employee2.output();
+    
+    Employee employee3;
+    employee3.input();
+    employee3.output();
+    
+
+    return 0;
+}
